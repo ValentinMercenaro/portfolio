@@ -6,8 +6,8 @@
     <title>Auto-évaluation des Compétences</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
             margin: 0;
             padding: 0;
             color: #ffffff;
@@ -18,8 +18,10 @@
         }
 
         h1 {
-            color: #007bff;
+            color: #00cc99; /* Vert plus doux */
             margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .skills-grid {
@@ -28,10 +30,11 @@
             gap: 20px;
             width: 100%;
             max-width: 800px;
+            margin-bottom: 40px;
         }
 
         .skill {
-            background-color: #2d2d2d;
+            background-color: #1a1a1a;
             border-radius: 10px;
             overflow: hidden;
             cursor: pointer;
@@ -40,25 +43,30 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            border: 2px solid #00cc99; /* Bordure plus douce */
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .skill:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile au survol */
         }
 
         .skill img {
             width: 80px;
             height: 80px;
             margin-bottom: 15px;
-            border-radius: 50%; /* Effet arrondi */
+            border-radius: 50%;
+            border: 2px solid #00cc99; /* Bordure plus douce */
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .skill h2 {
             text-align: center;
             margin: 0;
             font-size: 20px;
-            color: #007bff;
+            color: #00cc99; /* Vert plus doux */
+            text-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .modal {
@@ -75,27 +83,32 @@
         }
 
         .modal-content {
-            background-color: #2d2d2d;
+            background-color: #1a1a1a;
             padding: 20px;
             border-radius: 10px;
             width: 90%;
             max-width: 600px;
             position: relative;
+            border: 2px solid #00cc99; /* Bordure plus douce */
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile */
         }
 
         .modal-content h2 {
-            color: #007bff;
+            color: #00cc99; /* Vert plus doux */
             margin-top: 0;
+            text-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .modal-content h3 {
             color: #ff5722;
             margin-top: 20px;
+            text-shadow: 0 0 5px #ff5722; /* Ombre plus subtile */
         }
 
         .modal-content p {
             line-height: 1.6;
             margin: 10px 0;
+            color: #ffffff;
         }
 
         .close-btn {
@@ -113,20 +126,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 5px #ff5722; /* Ombre plus subtile */
         }
 
         .close-btn:hover {
             background-color: #e64a19;
+            box-shadow: 0 0 10px #ff5722; /* Ombre plus subtile au survol */
         }
 
         /* Header Styles */
         .header {
-            background-color: #2d2d2d;
-            color: #d4af37;
+            background-color: #1a1a1a;
+            color: #00cc99; /* Vert plus doux */
             padding: 15px 0;
             text-align: center;
-            border-bottom: 4px solid #d4af37;
+            border-bottom: 4px solid #00cc99; /* Bordure plus douce */
             width: 100%;
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile */
         }
 
         .nav {
@@ -137,19 +153,21 @@
 
         .nav a {
             flex: 1;
-            color: #d4af37;
+            color: #00cc99; /* Vert plus doux */
             text-decoration: none;
             padding: 15px;
-            background-color: #444;
+            background-color: #1a1a1a;
             border-radius: 5px;
-            border: 2px solid #d4af37;
+            border: 2px solid #00cc99; /* Bordure plus douce */
             font-weight: bold;
             text-align: center;
             display: block;
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .nav a:hover {
-            background-color: #666;
+            background-color: #333;
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile au survol */
         }
 
         .dropdown {
@@ -160,15 +178,15 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #2d2d2d;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+            background-color: #1a1a1a;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
             width: 100%;
             z-index: 1;
-            border: 2px solid #d4af37;
+            border: 2px solid #00cc99; /* Bordure plus douce */
         }
 
         .dropdown-content a {
-            color: #d4af37;
+            color: #00cc99; /* Vert plus doux */
             padding: 10px;
             display: block;
             text-decoration: none;
@@ -181,14 +199,14 @@
 
         /* Footer Styles */
         .footer {
-            background-color: #2d2d2d;
-            color: #d4af37;
+            background-color: #1a1a1a;
+            color: #00cc99; /* Vert plus doux */
             text-align: center;
             padding: 25px 0;
-            border-top: 4px solid #d4af37;
+            border-top: 4px solid #00cc99; /* Bordure plus douce */
             width: 100%;
-            position: fixed;
-            bottom: 0;
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile */
+            margin-top: auto; /* Pour coller le footer en bas */
         }
 
         .footer .buttons {
@@ -200,42 +218,83 @@
 
         .footer a {
             flex: 1;
-            color: #d4af37;
+            color: #00cc99; /* Vert plus doux */
             text-decoration: none;
             padding: 15px;
-            background-color: #444;
+            background-color: #1a1a1a;
             border-radius: 5px;
-            border: 2px solid #d4af37;
+            border: 2px solid #00cc99; /* Bordure plus douce */
             font-weight: bold;
             text-align: center;
             display: block;
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
 
         .footer a:hover {
-            background-color: #666;
+            background-color: #333;
+            box-shadow: 0 0 10px #00cc99; /* Ombre plus subtile au survol */
+        }
+
+        /* Soft Skills and Hard Skills Section */
+        .skills-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .skills-column {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            border: 2px solid #00cc99; /* Bordure plus douce */
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
+        }
+
+        .skills-column h2 {
+            color: #00cc99; /* Vert plus doux */
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
+        }
+
+        .skills-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-column li {
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            border: 1px solid #00cc99; /* Bordure plus douce */
+            box-shadow: 0 0 5px #00cc99; /* Ombre plus subtile */
         }
     </style>
 </head>
 <body>
-    <!-- Bandeau du haut -->
+    <!-- Header -->
     <div class="header">
         <div class="nav">
-            <a href="acceuil">Accueil</a>
+            <a href="acceuil.html">Accueil</a>
             <div class="dropdown">
-                <a href="personnel">Personnel</a>
+                <a href="#">Personnel</a>
                 <div class="dropdown-content">
-                    <a href="musique">musique</a>
-                    <a href="jeux_video">jeux vidéos</a>
-                    <a href="animanga">anime/manga</a>
-                    <a href="sport">sport</a>
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="professionnel">Professionnel</a>
+                <a href="#">Professionnel</a>
                 <div class="dropdown-content">
-                    <a href="parcours">études</a>
-                    <a href="exp_pro">expérience professionnel</a>
-                    <a href="skills">compétences</a>
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
                 </div>
             </div>
         </div>
@@ -263,6 +322,32 @@
         <div class="skill" onclick="openModal('modal-implanter')">
             <img src="https://i.pinimg.com/236x/9c/4e/c9/9c4ec9c2f760a3efbd91ce2ecf0f4c38.jpg" alt="Implanter">
             <h2>Implanter</h2>
+        </div>
+    </div>
+
+    <!-- Soft Skills and Hard Skills Section -->
+    <div class="skills-section">
+        <!-- Soft Skills Column -->
+        <div class="skills-column">
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Communication</li>
+                <li>Travail d'équipe</li>
+                <li>Adaptabilité</li>
+                <li>Créativité</li>
+                <li>Gestion du temps</li>
+            </ul>
+        </div>
+        <!-- Hard Skills Column -->
+        <div class="skills-column">
+            <h2>Hard Skills</h2>
+            <ul>
+                <li>Programmation (Python, JavaScript)</li>
+                <li>Gestion de bases de données</li>
+                <li>Conception UI/UX</li>
+                <li>Réseaux et sécurité</li>
+                <li>DevOps</li>
+            </ul>
         </div>
     </div>
 
@@ -320,7 +405,7 @@
         </div>
     </div>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <div class="footer">
         <div class="buttons">
             <a href="contact">Contact</a>
