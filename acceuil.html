@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mercenaro Valentin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Alignement en haut de la page */
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('https://www.digitalcombatsimulator.com/upload/iblock/142/Hc-01.jpg'); /* Dégradé sombre + image de fond */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Fond fixe pour un effet de défilement */
+        }
+
+        h1 {
+            color: #39ff14; /* Vert plus prononcé */
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #39ff14; /* Vert plus prononcé */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+        }
+
+        .carousel-container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            width: 48%;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            border: 2px solid #39ff14; /* Vert plus prononcé */
+            height: 400px; /* Hauteur augmentée */
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%; /* Prend toute la hauteur du carrousel */
+            object-fit: cover;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(57, 255, 20, 0.7); /* Vert plus prononcé */
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(57, 255, 20, 1); /* Vert plus prononcé */
+            box-shadow: 0 0 15px rgba(57, 255, 20, 1); /* Effet brillant au survol */
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .category-buttons a {
+            text-decoration: none; /* Supprime le soulignement des liens */
+        }
+
+        .category-buttons button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #39ff14; /* Vert plus prononcé */
+            color: #000;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+        }
+
+        .category-buttons button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 1); /* Effet brillant au survol */
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <h2>Mercenaro Valentin</h2>
+    <p class="quote">Speed is life</p>
+
+    <!-- Carrousel 1 -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel1">
+            <img src="https://source.unsplash.com/800x400/?airplane,military" alt="Image 1" class="active">
+            <img src="https://source.unsplash.com/800x400/?fighter-jet" alt="Image 2">
+            <img src="https://source.unsplash.com/800x400/?air-force" alt="Image 3">
+            <button class="carousel-button prev" onclick="prevSlide('carousel1')">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide('carousel1')">&#10095;</button>
+        </div>
+
+        <!-- Carrousel 2 -->
+        <div class="carousel" id="carousel2">
+            <img src="https://source.unsplash.com/800x400/?jet-pilot" alt="Image 4" class="active">
+            <img src="https://source.unsplash.com/800x400/?navy-jet" alt="Image 5">
+            <img src="https://source.unsplash.com/800x400/?cockpit" alt="Image 6">
+            <button class="carousel-button prev" onclick="prevSlide('carousel2')">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide('carousel2')">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Boutons de catégorie -->
+    <div class="category-buttons">
+        <a href="https://sites.google.com/votre-site/personnel" target="_blank">
+            <button>Briefing Personnel</button>
+        </a>
+        <a href="https://sites.google.com/votre-site/professionnel" target="_blank">
+            <button>Mission & Opérations</button>
+        </a>
+    </div>
+
+    <script>
+        function nextSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const images = carousel.querySelectorAll('img');
+            let activeIndex = 0;
+
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    img.classList.remove('active');
+                    activeIndex = index;
+                }
+            });
+
+            if (activeIndex === images.length - 1) {
+                images[0].classList.add('active');
+            } else {
+                images[activeIndex + 1].classList.add('active');
+            }
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const images = carousel.querySelectorAll('img');
+            let activeIndex = 0;
+
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    img.classList.remove('active');
+                    activeIndex = index;
+                }
+            });
+
+            if (activeIndex === 0) {
+                images[images.length - 1].classList.add('active');
+            } else {
+                images[activeIndex - 1].classList.add('active');
+            }
+        }
+
+        setInterval(() => nextSlide('carousel1'), 5000);
+        setInterval(() => nextSlide('carousel2'), 5000);
+    </script>
+</body>
+</html>

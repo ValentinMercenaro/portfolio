@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Valentin Mercenaro</title>
+    <style>
+        /* Reset des styles par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px;
+            background-image: url('https://wallpapercave.com/wp/wp8993433.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 80, 80, 0.3);
+            border: 2px solid rgba(255, 80, 80, 0.5);
+        }
+
+        /* En-tête */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            color: #ff5050;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #cccccc;
+            font-style: italic;
+        }
+
+        /* Section Profil */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 80, 80, 0.5);
+            box-shadow: 0 0 15px rgba(255, 80, 80, 0.3);
+        }
+
+        .description h2 {
+            font-size: 2em;
+            color: #ff5050;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 5px rgba(255, 80, 80, 0.3);
+        }
+
+        .description p {
+            font-size: 1.1em;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* Bouton des hobbies */
+        .hobby-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .hobby-button a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: rgba(255, 80, 80, 0.8);
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 80, 80, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .hobby-button a:hover {
+            background-color: rgba(255, 100, 100, 0.9);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 80, 80, 0.5);
+        }
+
+        /* Modale (page volante) */
+        .modal {
+            display: none; /* Cachée par défaut */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 80, 80, 0.3);
+            border: 2px solid rgba(255, 80, 80, 0.5);
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            font-size: 2em;
+            color: #ff5050;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
+        }
+
+        .modal-content a {
+            display: block;
+            margin: 15px 0;
+            padding: 12px 25px;
+            background-color: rgba(255, 80, 80, 0.8);
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 80, 80, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .modal-content a:hover {
+            background-color: rgba(255, 100, 100, 0.9);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 80, 80, 0.5);
+        }
+
+        /* Bouton de fermeture */
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            color: #ff5050;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header>
+            <h1>Valentin Mercenaro</h1>
+            <p>"The skies belongs to me, nowhere to run, nowhere to hide."</p>
+        </header>
+
+        <!-- Section Profil -->
+        <section class="profile">
+            <div class="photo">
+                <img src="https://via.placeholder.com/180" alt="Photo de Valentin Mercenaro">
+            </div>
+            <div class="description">
+                <h2>À propos de moi</h2>
+                <p>
+                    Goldorak et les dessins animés de mécatronique ont bercé mon enfance, ils m’ont fait aimer les robots, les technologies futuristes et les explosions… C’est pourquoi j’ai décidé que je voulais travailler dans ce domaine, par exemple dans la conception et la réalisation de drones militaires. 
+                    Ils permettent en effet de participer aux opérations de sécurisation ou d’exploration des espaces aériens en limitant les risques de pertes humaines, ils sont opérationnels presque constamment et offrent une force de frappe et de dissuasion conséquente. 
+                    Ce secteur a un besoin constant de personnel, de spécialistes, c’est donc dans l’optique de travailler dans ce domaine que je suis une formation en BUT GEII et d’intégrer par la suite une école d’ingénieur.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bouton pour ouvrir la modale -->
+        <div class="hobby-button">
+            <a href="#" id="open-modal">Découvrez mes hobbies</a>
+        </div>
+    </div>
+
+    <!-- Modale (page volante) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Mes Passions</h2>
+            <a href="https://sites.google.com/view/portfolio-valentin-mercenaro/personnel/mes-passions/musique?authuser=0" target="_blank">Musique</a>
+            <a href="https://sites.google.com/view/portfolio-valentin-mercenaro/personnel/mes-passions/jeux-vidéos?authuser=0" target="_blank">Jeux Vidéos</a>
+            <a href="https://sites.google.com/view/portfolio-valentin-mercenaro/personnel/mes-passions/animemanga?authuser=0" target="_blank">Anime/Manga</a>
+            <a href="https://sites.google.com/view/portfolio-valentin-mercenaro/personnel/mes-passions/sport?authuser=0" target="_blank">Sport</a>
+        </div>
+    </div>
+
+    <!-- Script pour gérer la modale -->
+    <script>
+        // Ouvrir la modale
+        document.getElementById('open-modal').addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche le lien de rediriger
+            document.getElementById('modal').style.display = 'flex';
+        });
+
+        // Fermer la modale
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Fermer la modale en cliquant en dehors
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
