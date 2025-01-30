@@ -5,43 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Mercenaro Valentin</title>
     <style>
+        /* Styles pour le header et le footer */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
+            font-family: 'Arial Black', sans-serif;
             margin: 0;
             padding: 0;
-            color: #ffffff;
+            background-color: #1a1a1a;
+            color: #d4af37;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+
+        .nav a:hover {
+            background-color: #666;
+        }
+
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+        }
+
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .footer {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+            margin-top: auto; /* Pour coller le footer en bas */
+        }
+
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+
+        .footer a:hover {
+            background-color: #666;
+        }
+
+        /* Styles pour le contenu principal */
+        .main-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Alignement en haut de la page */
-            min-height: 100vh;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('https://www.digitalcombatsimulator.com/upload/iblock/142/Hc-01.jpg'); /* Dégradé sombre + image de fond */
+            justify-content: flex-start;
+            padding: 20px;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('https://www.digitalcombatsimulator.com/upload/iblock/142/Hc-01.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Fond fixe pour un effet de défilement */
+            background-attachment: fixed;
+            color: #ffffff;
         }
 
         h1 {
-            color: #39ff14; /* Vert plus prononcé */
+            color: #39ff14;
             font-size: 3rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         h2 {
             color: #ffffff;
             font-size: 1.5rem;
             margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .quote {
             font-size: 1.2rem;
             font-style: italic;
-            color: #39ff14; /* Vert plus prononcé */
+            color: #39ff14;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .carousel-container {
@@ -58,14 +159,14 @@
             overflow: hidden;
             border-radius: 10px;
             position: relative;
-            border: 2px solid #39ff14; /* Vert plus prononcé */
-            height: 400px; /* Hauteur augmentée */
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+            border: 2px solid #39ff14;
+            height: 400px;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
         }
 
         .carousel img {
             width: 100%;
-            height: 100%; /* Prend toute la hauteur du carrousel */
+            height: 100%;
             object-fit: cover;
             border-radius: 10px;
             display: none;
@@ -79,7 +180,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(57, 255, 20, 0.7); /* Vert plus prononcé */
+            background-color: rgba(57, 255, 20, 0.7);
             color: #000;
             border: none;
             border-radius: 50%;
@@ -90,7 +191,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
         }
 
         .carousel-button.prev {
@@ -102,8 +203,8 @@
         }
 
         .carousel-button:hover {
-            background-color: rgba(57, 255, 20, 1); /* Vert plus prononcé */
-            box-shadow: 0 0 15px rgba(57, 255, 20, 1); /* Effet brillant au survol */
+            background-color: rgba(57, 255, 20, 1);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 1);
         }
 
         .category-buttons {
@@ -116,60 +217,97 @@
         }
 
         .category-buttons a {
-            text-decoration: none; /* Supprime le soulignement des liens */
+            text-decoration: none;
         }
 
         .category-buttons button {
             padding: 15px 30px;
             border: none;
             border-radius: 5px;
-            background-color: #39ff14; /* Vert plus prononcé */
+            background-color: #39ff14;
             color: #000;
             cursor: pointer;
             font-size: 1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7); /* Effet brillant avec le nouveau vert */
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
         }
 
         .category-buttons button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(57, 255, 20, 1); /* Effet brillant au survol */
+            box-shadow: 0 0 15px rgba(57, 255, 20, 1);
         }
     </style>
 </head>
 <body>
-    <h1>Portfolio</h1>
-    <h2>Mercenaro Valentin</h2>
-    <p class="quote">Speed is life</p>
-
-    <!-- Carrousel 1 -->
-    <div class="carousel-container">
-        <div class="carousel" id="carousel1">
-            <img src="https://source.unsplash.com/800x400/?airplane,military" alt="Image 1" class="active">
-            <img src="https://source.unsplash.com/800x400/?fighter-jet" alt="Image 2">
-            <img src="https://source.unsplash.com/800x400/?air-force" alt="Image 3">
-            <button class="carousel-button prev" onclick="prevSlide('carousel1')">&#10094;</button>
-            <button class="carousel-button next" onclick="nextSlide('carousel1')">&#10095;</button>
-        </div>
-
-        <!-- Carrousel 2 -->
-        <div class="carousel" id="carousel2">
-            <img src="https://source.unsplash.com/800x400/?jet-pilot" alt="Image 4" class="active">
-            <img src="https://source.unsplash.com/800x400/?navy-jet" alt="Image 5">
-            <img src="https://source.unsplash.com/800x400/?cockpit" alt="Image 6">
-            <button class="carousel-button prev" onclick="prevSlide('carousel2')">&#10094;</button>
-            <button class="carousel-button next" onclick="nextSlide('carousel2')">&#10095;</button>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Boutons de catégorie -->
-    <div class="category-buttons">
-        <a href="https://sites.google.com/votre-site/personnel" target="_blank">
-            <button>Briefing Personnel</button>
-        </a>
-        <a href="https://sites.google.com/votre-site/professionnel" target="_blank">
-            <button>Mission & Opérations</button>
-        </a>
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>Portfolio</h1>
+        <h2>Mercenaro Valentin</h2>
+        <p class="quote">Speed is life</p>
+
+        <!-- Carrousel 1 -->
+        <div class="carousel-container">
+            <div class="carousel" id="carousel1">
+                <img src="https://source.unsplash.com/800x400/?airplane,military" alt="Image 1" class="active">
+                <img src="https://source.unsplash.com/800x400/?fighter-jet" alt="Image 2">
+                <img src="https://source.unsplash.com/800x400/?air-force" alt="Image 3">
+                <button class="carousel-button prev" onclick="prevSlide('carousel1')">&#10094;</button>
+                <button class="carousel-button next" onclick="nextSlide('carousel1')">&#10095;</button>
+            </div>
+
+            <!-- Carrousel 2 -->
+            <div class="carousel" id="carousel2">
+                <img src="https://source.unsplash.com/800x400/?jet-pilot" alt="Image 4" class="active">
+                <img src="https://source.unsplash.com/800x400/?navy-jet" alt="Image 5">
+                <img src="https://source.unsplash.com/800x400/?cockpit" alt="Image 6">
+                <button class="carousel-button prev" onclick="prevSlide('carousel2')">&#10094;</button>
+                <button class="carousel-button next" onclick="nextSlide('carousel2')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Boutons de catégorie -->
+        <div class="category-buttons">
+            <a href="https://sites.google.com/votre-site/personnel" target="_blank">
+                <button>Briefing Personnel</button>
+            </a>
+            <a href="https://sites.google.com/votre-site/professionnel" target="_blank">
+                <button>Mission & Opérations</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="acceuil.html">Accueil</a>
+            <a href="perso1.html">Personnel</a>
+            <a href="pro1.html">Professionnel</a>
+        </div>
+        <div class="buttons">
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
+        </div>
     </div>
 
     <script>

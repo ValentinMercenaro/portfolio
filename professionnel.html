@@ -5,22 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Professionnelle - Aéronautique Militaire</title>
     <style>
+        /* Styles généraux */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
         body { background: #1a1a1a; color: #00ff00; text-align: center; padding: 20px; }
-        h1 { font-size: 5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        p { font-size: 2.5rem; margin-bottom: 20px; opacity: 0.9; }
-        .quote { font-style: italic; font-size: 1.8rem; margin-bottom: 30px; opacity: 0.8; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        p { font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9; }
+        .quote { font-style: italic; font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8; }
         .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
-        .btn { background: #004d00; color: #00ff00; padding: 12px 20px; border: 2px solid #00ff00; border-radius: 5px; font-size: 2rem; cursor: pointer; transition: 0.3s; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        .btn { background: #004d00; color: #00ff00; padding: 12px 20px; border: 2px solid #00ff00; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: 0.3s; text-decoration: none; font-weight: bold; text-transform: uppercase; }
         .btn:hover { background: #008000; transform: scale(1.1); box-shadow: 0 0 10px #00ff00; }
         @media (max-width: 600px) { .btn-container { flex-direction: column; align-items: center; } }
         .hud { border: 2px solid #00ff00; padding: 15px; box-shadow: 0 0 15px #00ff00; margin-top: 20px; }
         .typing { overflow: hidden; white-space: nowrap; border-right: 2px solid #00ff00; width: 0; animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         @keyframes blink { 50% { border-color: transparent; } }
+
+        /* Styles du header */
+        .header {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        .nav a:hover {
+            background-color: #666;
+        }
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+        }
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Styles du footer */
+        .footer {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+            margin-top: 20px;
+        }
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        .footer a:hover {
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
     <div class="hud">
         <h1 class="typing">Bienvenue Pilote</h1>
         <p class="typing" style="animation-delay: 0.5s;">Découvrez mon parcours, mes compétences et mes expériences.</p>
@@ -29,6 +135,19 @@
             <a href="#etudes" class="btn">🎓 Académie</a>
             <a href="#experiences" class="btn">✈️ Missions</a>
             <a href="#competences" class="btn">🛠️ Capacités</a>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="acceuil.html">Accueil</a>
+            <a href="perso1.html">Personnel</a>
+            <a href="pro1.html">Professionnel</a>
+        </div>
+        <div class="buttons">
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
         </div>
     </div>
 </body>
