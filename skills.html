@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-évaluation des Compétences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 40px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .skill {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        .skill img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 50%; /* Effet arrondi */
+        }
+
+        .skill h2 {
+            text-align: center;
+            margin: 0;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        .modal-content h3 {
+            color: #ff5722;
+            margin-top: 20px;
+        }
+
+        .modal-content p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .close-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+            width: 100%;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+
+        .nav a:hover {
+            background-color: #666;
+        }
+
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+        }
+
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+
+        .footer a:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <h1>Auto-évaluation des Compétences</h1>
+    <div class="skills-grid">
+        <!-- Concevoir -->
+        <div class="skill" onclick="openModal('modal-concevoir')">
+            <img src="https://i.pinimg.com/236x/9c/4e/c9/9c4ec9c2f760a3efbd91ce2ecf0f4c38.jpg" alt="Concevoir">
+            <h2>Concevoir</h2>
+        </div>
+        <!-- Vérifier -->
+        <div class="skill" onclick="openModal('modal-verifier')">
+            <img src="https://i.pinimg.com/236x/9c/4e/c9/9c4ec9c2f760a3efbd91ce2ecf0f4c38.jpg" alt="Vérifier">
+            <h2>Vérifier</h2>
+        </div>
+        <!-- Maintenir -->
+        <div class="skill" onclick="openModal('modal-maintenir')">
+            <img src="https://i.pinimg.com/236x/9c/4e/c9/9c4ec9c2f760a3efbd91ce2ecf0f4c38.jpg" alt="Maintenir">
+            <h2>Maintenir</h2>
+        </div>
+        <!-- Implanter -->
+        <div class="skill" onclick="openModal('modal-implanter')">
+            <img src="https://i.pinimg.com/236x/9c/4e/c9/9c4ec9c2f760a3efbd91ce2ecf0f4c38.jpg" alt="Implanter">
+            <h2>Implanter</h2>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Concevoir -->
+    <div id="modal-concevoir" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-concevoir')">&times;</button>
+            <h2>Concevoir</h2>
+            <h3>Niveau 1</h3>
+            <p>Détails sur le niveau 1 de la compétence Concevoir.</p>
+            <h3>Niveau 2</h3>
+            <p>Détails sur le niveau 2 de la compétence Concevoir.</p>
+            <h3>Niveau 3</h3>
+            <p>Détails sur le niveau 3 de la compétence Concevoir.</p>
+            <h3>Niveau 4</h3>
+            <p>Détails sur le niveau 4 de la compétence Concevoir.</p>
+        </div>
+    </div>
+    <!-- Vérifier -->
+    <div id="modal-verifier" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-verifier')">&times;</button>
+            <h2>Vérifier</h2>
+            <h3>Niveau 1</h3>
+            <p>Détails sur le niveau 1 de la compétence Vérifier.</p>
+            <h3>Niveau 2</h3>
+            <p>Détails sur le niveau 2 de la compétence Vérifier.</p>
+            <h3>Niveau 3</h3>
+            <p>Détails sur le niveau 3 de la compétence Vérifier.</p>
+            <h3>Niveau 4</h3>
+            <p>Détails sur le niveau 4 de la compétence Vérifier.</p>
+        </div>
+    </div>
+    <!-- Maintenir -->
+    <div id="modal-maintenir" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-maintenir')">&times;</button>
+            <h2>Maintenir</h2>
+            <h3>Niveau 1</h3>
+            <p>Détails sur le niveau 1 de la compétence Maintenir.</p>
+            <h3>Niveau 2</h3>
+            <p>Détails sur le niveau 2 de la compétence Maintenir.</p>
+        </div>
+    </div>
+    <!-- Implanter -->
+    <div id="modal-implanter" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-implanter')">&times;</button>
+            <h2>Implanter</h2>
+            <h3>Niveau 1</h3>
+            <p>Détails sur le niveau 1 de la compétence Implanter.</p>
+            <h3>Niveau 2</h3>
+            <p>Détails sur le niveau 2 de la compétence Implanter.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="contact">Contact</a>
+            <a href="cv">CV</a>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir la modale
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // Fonction pour fermer la modale
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Fermer la modale en cliquant en dehors
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
