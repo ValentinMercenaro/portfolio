@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Valentin Mercenaro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            text-align: center;
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+        }
+        .header {
+            background: linear-gradient(90deg, #001f3f, #005f9e);
+            color: #ffcc00;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #ff0000;
+            box-shadow: 0 0 15px #ff0000;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+        }
+        .nav a, .dropdown {
+            flex: 1;
+            text-align: center;
+        }
+        .nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            padding: 15px;
+            background: #001f3f;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            display: block;
+        }
+        .nav a:hover {
+            background: #005f9e;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #001f3f;
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #ff0000;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #ffcc00;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background: linear-gradient(90deg, #001f3f, #005f9e);
+            color: #ffcc00;
+            text-align: center;
+            padding: 50px 0;
+            border-top: 4px solid #ff0000;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 0 15px #ff0000;
+        }
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            padding: 25px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            background: #001f3f;
+            transition: 0.3s;
+        }
+        .footer a:hover {
+            background: #005f9e;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        .contact-info {
+            background: rgba(0, 0, 50, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 10px #ff0000;
+            width: 50%;
+        }
+        .contact-info a {
+            color: #00aaff;
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            filter: drop-shadow(0 0 10px #ffcc00);
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ffcc00;
+            text-shadow: 2px 2px 10px #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil">Accueil</a>
+            <div class="dropdown">
+                <a href="personnel">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="musique">Musique</a>
+                    <a href="jeux_video">Jeux Vidéos</a>
+                    <a href="animanga">Anime/Manga</a>
+                    <a href="sport">Sport</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="professionnel">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="parcours">Études</a>
+                    <a href="exp_pro">Expérience Professionnelle</a>
+                    <a href="skills">Compétences</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Contactez-moi</h1>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:valentin.mercenaro@gmail.com">valentin.mercenaro@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/valentin-mercenaro/" target="_blank">Valentin Mercenaro</a></p>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/valentin-mercenaro/" alt="QR Code LinkedIn">
+        </div>
+    </div>
+    <div class="footer">
+        <a href="contact">Contact</a>
+        <a href="cv">CV</a>
+    </div>
+</body>
+</html>
