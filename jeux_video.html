@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gaming</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            font-family: 'Press Start 2P', cursive; /* Police rétro gaming */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.multiwex.be/wp-content/uploads/2024/05/starcadium-multiwex-arcade.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #00ffcc; /* Couleur texte principale */
+            text-align: center; /* Centrage du texte */
+            overflow: hidden;
+        }
+        .header {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+            font-family: 'Press Start 2P', cursive; /* Police rétro pour le header */
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            font-family: 'Press Start 2P', cursive; /* Police rétro pour les liens */
+        }
+        .nav a:hover {
+            background-color: #666;
+        }
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+            font-family: 'Press Start 2P', cursive; /* Police rétro pour le dropdown */
+        }
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .screen {
+            border: 10px solid #ff00ff;
+            border-radius: 15px;
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            box-shadow: 0 0 20px #ff00ff;
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive; /* Police rétro pour le contenu */
+        }
+        .screen::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                rgba(0, 255, 204, 0.1), 
+                rgba(0, 255, 204, 0.15) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            pointer-events: none;
+        }
+        .scanline {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            animation: scanline 3s linear infinite;
+        }
+        @keyframes scanline {
+            from { top: -100%; }
+            to { top: 100%; }
+        }
+        .game {
+            margin: 20px 0;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            color: #00ffcc; /* Couleur texte des jeux */
+        }
+        .game:hover {
+            transform: scale(1.1);
+            color: #ff00ff; /* Couleur texte au survol */
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .game-title {
+            animation: flicker 1s infinite alternate;
+            color: #00ffcc; /* Couleur texte du titre */
+        }
+        .footer {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        .footer a:hover {
+            background-color: #666;
+        }
+        #description {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #00ffcc; /* Couleur texte de la description */
+        }
+    </style>
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="screen">
+        <div class="scanline"></div>
+        <h1 class="game-title">Mes Jeux Préférés</h1>
+        <div class="game" onclick="showGame('Titanfall')">Titanfall Universe</div>
+        <div class="game" onclick="showGame('Cyberpunk 2077')">Cyberpunk 2077</div>
+        <div class="game" onclick="showGame('Souls Like')">Les Souls Like</div>
+        <div class="game" onclick="showGame('Monster Hunter')">Monster Hunter Universe</div>
+        <div class="game" onclick="showGame('War Thunder')">War Thunder</div>
+        <p id="description"></p>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="acceuil.html">Accueil</a>
+            <a href="perso1.html">Personnel</a>
+            <a href="pro1.html">Professionnel</a>
+        </div>
+        <div class="buttons">
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
+        </div>
+    </div>
+
+    <script>
+        function showGame(game) {
+            const descriptions = {
+                'Titanfall': "Un univers futuriste où les pilotes et leurs Titans s'affrontent dans des batailles épiques.",
+                'Cyberpunk 2077': "Un RPG en monde ouvert qui plonge dans un univers cyberpunk dystopique.",
+                'Souls Like': "Des jeux exigeants offrant des combats intenses et un level design exceptionnel.",
+                'Monster Hunter': "Chasser d'énormes créatures dans un univers riche et évolutif.",
+                'War Thunder': "Un simulateur militaire intense regroupant des véhicules aériens, terrestres et navals."
+            };
+            document.getElementById("description").textContent = descriptions[game];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV</title>
+    <style>
+        body {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://res.cloudinary.com/dkkd45ayz/image/upload/f_auto,dpr_auto,q_auto,fl_progressive/w_1.0,h_0.8791666666666666666666666667,c_fill,g_auto/w_2048,h_1152,c_scale/episerver/071584a2-31d6-4c72-bae3-343a753229e6/gripen-e_jer_4875.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #d4af37;
+        }
+        .header {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        .nav a:hover {
+            background-color: #666;
+        }
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+        }
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background-color: #2d2d2d;
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+        }
+        .footer a:hover {
+            background-color: #666;
+        }
+        .cv-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 150px); /* Ajustez la hauteur en fonction du header et footer */
+            padding: 20px;
+        }
+        .cv-container img {
+            max-width: 100%;
+            max-height: 100%;
+            border: 4px solid #d4af37;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal : Screenshot du CV -->
+    <div class="cv-container">
+        <img src="votre_screenshot_cv.jpg" alt="Mon CV">
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="acceuil.html">Accueil</a>
+            <a href="perso1.html">Personnel</a>
+            <a href="pro1.html">Professionnel</a>
+        </div>
+        <div class="buttons">
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
+        </div>
+    </div>
+</body>
+</html>

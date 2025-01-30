@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Mangas et Anime</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://orig05.deviantart.net/55c6/f/2012/069/8/0/evangelion__s_nerv_by_drace_sylvanian-d4scvm6.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        /* Header */
+        .header {
+            background-color: rgba(45, 45, 45, 0.9);
+            color: #d4af37;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .nav a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: rgba(68, 68, 68, 0.8);
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin: 0 10px;
+        }
+
+        .nav a:hover {
+            background-color: rgba(102, 102, 102, 0.8);
+        }
+
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(45, 45, 45, 0.9);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #d4af37;
+        }
+
+        .dropdown-content a {
+            color: #d4af37;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Contenu principal */
+        h1 {
+            font-size: 3rem;
+            color: #ff2a6d;
+            text-shadow: 0 0 5px #ff2a6d, 0 0 10px #ff2a6d;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background-color: rgba(10, 10, 35, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(10, 10, 35, 0.8);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .card {
+            background-color: #1a1a40;
+            border: 2px solid #ff2a6d;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #ff2a6d, 0 0 20px #ff2a6d;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #ff2a6d;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(45, 45, 45, 0.9);
+            color: #d4af37;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #d4af37;
+        }
+
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .footer a {
+            flex: 1;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 15px;
+            background-color: rgba(68, 68, 68, 0.8);
+            border-radius: 5px;
+            border: 2px solid #d4af37;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            background-color: rgba(102, 102, 102, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="perso1.html">Page Perso 1</a>
+                    <a href="perso2.html">Page Perso 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="pro1.html">Page Pro 1</a>
+                    <a href="pro2.html">Page Pro 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <h1>Mon Portfolio - Mangas et Anime</h1>
+    <div class="portfolio-container">
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Berserk" alt="Berserk">
+            <h2>Berserk</h2>
+            <p>Un manga sombre et épique.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Vagabond" alt="Vagabond">
+            <h2>Vagabond</h2>
+            <p>L'histoire de Miyamoto Musashi.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Akame+ga+Kill" alt="Akame ga Kill">
+            <h2>Akame ga Kill</h2>
+            <p>Un anime rempli d'action.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Gundam" alt="Gundam">
+            <h2>Gundam</h2>
+            <p>La saga des géants mécaniques.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Evangelion" alt="Evangelion">
+            <h2>Evangelion</h2>
+            <p>Un classique de l'anime.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x300?text=Tokyo+Ghoul" alt="Tokyo Ghoul">
+            <h2>Tokyo Ghoul</h2>
+            <p>Un monde de ghouls et d'humains.</p>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="acceuil.html">Accueil</a>
+            <a href="perso1.html">Personnel</a>
+            <a href="pro1.html">Professionnel</a>
+        </div>
+        <div class="buttons">
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
+        </div>
+    </div>
+</body>
+</html>
