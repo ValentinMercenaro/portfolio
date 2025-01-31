@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio MTB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            line-height: 1.6;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2d2d2d;
+            color: #f4f4f4;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #ff6f61;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .nav a {
+            flex: 1;
+            color: #f4f4f4;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #ff6f61;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin: 0 5px;
+        }
+
+        .nav a:hover {
+            background-color: #666;
+        }
+
+        .dropdown {
+            position: relative;
+            flex: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            z-index: 1;
+            border: 2px solid #ff6f61;
+        }
+
+        .dropdown-content a {
+            color: #f4f4f4;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero Section */
+        header {
+            background: url('mtb-header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.4rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #karate {
+            background: #2d2d2d;
+        }
+
+        #muscu {
+            background: #383838;
+        }
+
+        #vtt {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2d2d2d;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 4px solid #ff6f61;
+            width: 100%;
+        }
+
+        .footer .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .footer a {
+            flex: 1;
+            color: #f4f4f4;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #ff6f61;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin: 0 5px;
+        }
+
+        .footer a:hover {
+            background-color: #666;
+        }
+
+        /* Animations */
+        section {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil">Accueil</a>
+            <div class="dropdown">
+                <a href="personnel">Personnel</a>
+                <div class="dropdown-content">
+                    <a href="musique">Musique</a>
+                    <a href="jeux_video">Jeux vidéos</a>
+                    <a href="animanga">Anime/Manga</a>
+                    <a href="sport">Sport</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="professionnel">Professionnel</a>
+                <div class="dropdown-content">
+                    <a href="parcours">Études</a>
+                    <a href="exp_pro">Expérience professionnelle</a>
+                    <a href="skills">Compétences</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="header-content">
+            <h1>Mon parcours sportif</h1>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    <section id="karate">
+        <div class="section-content">
+            <h2>Karaté</h2>
+            <p>J'ai pratiqué le karaté pendant 9 ans et ai atteint la ceinture marron. Cette discipline m'a appris la discipline, la concentration et le respect.</p>
+            <img src="karate.jpg" alt="Karaté Ceinture Marron">
+        </div>
+    </section>
+
+    <section id="muscu">
+        <div class="section-content">
+            <h2>Musculation</h2>
+            <p>Actuellement, je me consacre à la musculation pour améliorer ma force et mon endurance. C'est un excellent complément à mes autres activités sportives.</p>
+            <img src="muscu.jpg" alt="Musculation">
+        </div>
+    </section>
+
+    <section id="vtt">
+        <div class="section-content">
+            <h2>VTT (MTB)</h2>
+            <p>Le VTT est ma passion actuelle. J'adore explorer les sentiers, relever des défis techniques et profiter de la nature.</p>
+            <img src="vtt.jpg" alt="VTT Montagne">
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="contact">Contact</a>
+            <a href="cv">CV</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
