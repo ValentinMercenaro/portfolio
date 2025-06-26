@@ -21,6 +21,9 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Assure que le body prend toute la hauteur de l'écran */
         }
 
         /* Header */
@@ -36,6 +39,7 @@
             display: flex;
             justify-content: space-around;
             padding: 10px;
+            flex-wrap: wrap; /* Permet de gérer la navigation sur les petits écrans */
         }
 
         .nav a {
@@ -91,7 +95,7 @@
             border-radius: 15px;
             box-shadow: 0 0 30px rgba(255, 80, 80, 0.3);
             border: 2px solid rgba(255, 80, 80, 0.5);
-            padding: 100px;
+            flex: 1; /* Assure que la section principale prenne tout l'espace disponible */
         }
 
         /* En-tête */
@@ -120,6 +124,8 @@
             align-items: center;
             gap: 30px;
             margin-bottom: 40px;
+            flex-wrap: wrap; /* Ajouté pour permettre une disposition responsive */
+            justify-content: center;
         }
 
         .photo img {
@@ -239,16 +245,16 @@
             text-align: center;
             padding: 25px 0;
             border-top: 4px solid #d4af37;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: auto; /* Rattache le footer au bas de la page */
         }
+
         .footer .buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 10px;
         }
+
         .footer a {
             flex: 1;
             color: #d4af37;
@@ -261,8 +267,58 @@
             text-align: center;
             display: block;
         }
+
         .footer a:hover {
             background-color: #666;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column; /* Colonne sur petits écrans */
+                align-items: center;
+            }
+
+            .photo img {
+                width: 150px; /* Réduit la taille de l'image */
+                height: 150px;
+            }
+
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .nav a {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .footer .buttons a {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile {
+                gap: 20px;
+            }
+
+            .photo img {
+                width: 130px; /* Réduit encore plus l'image */
+                height: 130px;
+            }
+
+            .nav a {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+
+            .footer .buttons a {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -270,22 +326,22 @@
     <!-- Bandeau du haut -->
     <div class="header">
         <div class="nav">
-            <a href="acceuil">Accueil</a>
+            <a href="acceuil.html">Accueil</a>
             <div class="dropdown">
-                <a href="personnel">Personnel</a>
+                <a href="personnel.html">Personnel</a>
                 <div class="dropdown-content">
-                    <a href="musique">musique</a>
-                    <a href="jeux_video">jeux vidéos</a>
-                    <a href="animanga">anime/manga</a>
-                    <a href="sport">sport</a>
+                    <a href="musique.html">musique</a>
+                    <a href="jeux_video.html">jeux vidéos</a>
+                    <a href="animanga.html">anime/manga</a>
+                    <a href="sport.html">sport</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="professionnel">Professionnel</a>
+                <a href="professionnel.html">Professionnel</a>
                 <div class="dropdown-content">
-                    <a href="parcours">études</a>
-                    <a href="exp_pro">expérience professionnel</a>
-                    <a href="skills">compétences</a>
+                    <a href="parcours.html">études</a>
+                    <a href="exp_pro.html">expérience professionnel</a>
+                    <a href="skills.html">compétences</a>
                 </div>
             </div>
         </div>
@@ -325,18 +381,18 @@
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
             <h2>Mes Passions</h2>
-            <a href="musique">Musique</a>
-            <a href="jeux_video">Jeux Vidéos</a>
-            <a href="animanga">Anime/Manga</a>
-            <a href="sport">Sport</a>
+            <a href="musique.html">Musique</a>
+            <a href="jeux_video.html">Jeux Vidéos</a>
+            <a href="animanga.html">Anime/Manga</a>
+            <a href="sport.html">Sport</a>
         </div>
     </div>
 
     <!-- Pied de page -->
     <div class="footer">
         <div class="buttons">
-            <a href="contact">Contact</a>
-            <a href="cv">CV</a>
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
         </div>
     </div>
 
