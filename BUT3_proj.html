@@ -189,6 +189,17 @@
                 <button onclick="openModal('modal-feedback-2')">Mon ressenti</button>
             </div>
         </div>
+
+        <!-- Projet 3: Optiplante -->
+        <div class="project">
+            <img src="https://via.placeholder.com/200" alt="Optiplante">
+            <h3>Optiplante</h3>
+            <div class="buttons">
+                <button onclick="openModal('modal-traces-3')">Voir les traces</button>
+                <button onclick="openModal('modal-detail-3')">Détail</button>
+                <button onclick="openModal('modal-feedback-3')">Mon ressenti</button>
+            </div>
+        </div>
     </div>
 
     <!-- Modal Traces -->
@@ -204,6 +215,14 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-traces-2')">&times;</span>
             <h2>Traces du projet Robot Autonome Niv 3</h2>
+            <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
+        </div>
+    </div>
+
+    <div id="modal-traces-3" class="modal" onclick="closeModal('modal-traces-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-traces-3')">&times;</span>
+            <h2>Traces du projet Optiplante</h2>
             <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
         </div>
     </div>
@@ -225,6 +244,14 @@
         </div>
     </div>
 
+    <div id="modal-detail-3" class="modal" onclick="closeModal('modal-detail-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-3')">&times;</span>
+            <h2>Détail du projet Optiplante</h2>
+            <p>Description détaillée du projet ici.</p>
+        </div>
+    </div>
+
     <!-- Modal Feedback -->
     <div id="modal-feedback-1" class="modal" onclick="closeModal('modal-feedback-1')">
         <div class="modal-content" onclick="event.stopPropagation();">
@@ -238,6 +265,14 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-feedback-2')">&times;</span>
             <h2>Mon ressenti sur le projet Robot Autonome Niv 3</h2>
+            <p>Mon ressenti et expérience à propos de ce projet.</p>
+        </div>
+    </div>
+
+    <div id="modal-feedback-3" class="modal" onclick="closeModal('modal-feedback-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-feedback-3')">&times;</span>
+            <h2>Mon ressenti sur le projet Optiplante</h2>
             <p>Mon ressenti et expérience à propos de ce projet.</p>
         </div>
     </div>
