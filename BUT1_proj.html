@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUT 1 - Projets réalisés</title>
+    <style>
+        /* Reset des styles par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style général */
+        body {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 4px solid #fff;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1;
+            text-align: center;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+        .nav a:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        /* Section des projets */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 50px;
+        }
+
+        .project {
+            text-align: center;
+            width: 230px;
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Boutons */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px;
+            background-color: #444;
+            border: 2px solid #fff;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #fff;
+            max-width: 800px;
+            color: #fff;
+            text-align: left;
+            width: 90%;
+        }
+
+        .modal-content h2 {
+            font-size: 2rem;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .close-modal {
+            color: #fff;
+            font-size: 2rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <div class="nav">
+            <a href="acceuil">Accueil</a>
+            <a href="personnel">Personnel</a>
+            <a href="professionnel">Professionnel</a>
+        </div>
+    </div>
+
+    <!-- Section des projets -->
+    <div class="projects">
+        <!-- Projet 1: Carte Smart Light -->
+        <div class="project">
+            <img src="https://via.placeholder.com/200" alt="Carte Smart Light">
+            <h3>Carte Smart Light</h3>
+            <div class="buttons">
+                <button onclick="openModal('modal-traces-1')">Voir les traces</button>
+                <button onclick="openModal('modal-detail-1')">Détail</button>
+                <button onclick="openModal('modal-feedback-1')">Mon ressenti</button>
+            </div>
+        </div>
+
+        <!-- Projet 2: Vérification Système Électrique Automate -->
+        <div class="project">
+            <img src="https://via.placeholder.com/200" alt="Vérification Système Électrique Automate">
+            <h3>Vérification Système Électrique Automate</h3>
+            <div class="buttons">
+                <button onclick="openModal('modal-traces-2')">Voir les traces</button>
+                <button onclick="openModal('modal-detail-2')">Détail</button>
+                <button onclick="openModal('modal-feedback-2')">Mon ressenti</button>
+            </div>
+        </div>
+
+        <!-- Projet 3: Robot Autonome Éviteur d'Obstacle -->
+        <div class="project">
+            <img src="https://via.placeholder.com/200" alt="Robot Autonome Éviteur d'Obstacle">
+            <h3>Robot Autonome Éviteur d'Obstacle</h3>
+            <div class="buttons">
+                <button onclick="openModal('modal-traces-3')">Voir les traces</button>
+                <button onclick="openModal('modal-detail-3')">Détail</button>
+                <button onclick="openModal('modal-feedback-3')">Mon ressenti</button>
+            </div>
+        </div>
+
+        <!-- Projet 4: Système Émetteur/Récepteur -->
+        <div class="project">
+            <img src="https://via.placeholder.com/200" alt="Système Émetteur/Récepteur">
+            <h3>Système Émetteur/Récepteur</h3>
+            <div class="buttons">
+                <button onclick="openModal('modal-traces-4')">Voir les traces</button>
+                <button onclick="openModal('modal-detail-4')">Détail</button>
+                <button onclick="openModal('modal-feedback-4')">Mon ressenti</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Traces -->
+    <div id="modal-traces-1" class="modal" onclick="closeModal('modal-traces-1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-traces-1')">&times;</span>
+            <h2>Traces du projet Carte Smart Light</h2>
+            <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
+        </div>
+    </div>
+
+    <div id="modal-traces-2" class="modal" onclick="closeModal('modal-traces-2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-traces-2')">&times;</span>
+            <h2>Traces du projet Vérification Système Électrique Automate</h2>
+            <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
+        </div>
+    </div>
+
+    <!-- Modal Détails -->
+    <div id="modal-detail-1" class="modal" onclick="closeModal('modal-detail-1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-1')">&times;</span>
+            <h2>Détail du projet Carte Smart Light</h2>
+            <p>Description détaillée du projet ici.</p>
+        </div>
+    </div>
+
+    <div id="modal-detail-2" class="modal" onclick="closeModal('modal-detail-2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-2')">&times;</span>
+            <h2>Détail du projet Vérification Système Électrique Automate</h2>
+            <p>Description détaillée du projet ici.</p>
+        </div>
+    </div>
+
+    <!-- Modal Feedback -->
+    <div id="modal-feedback-1" class="modal" onclick="closeModal('modal-feedback-1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-feedback-1')">&times;</span>
+            <h2>Mon ressenti sur le projet Carte Smart Light</h2>
+            <p>Mon ressenti et expérience à propos de ce projet.</p>
+        </div>
+    </div>
+
+    <div id="modal-feedback-2" class="modal" onclick="closeModal('modal-feedback-2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-feedback-2')">&times;</span>
+            <h2>Mon ressenti sur le projet Vérification Système Électrique Automate</h2>
+            <p>Mon ressenti et expérience à propos de ce projet.</p>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir la modale
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // Fonction pour fermer la modale
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Ferme la modale si on clique en dehors
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

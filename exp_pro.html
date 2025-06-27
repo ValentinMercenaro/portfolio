@@ -3,96 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandeau et Pied de page - Style Avion Militaire</title>
+    <title>Mes Expériences Professionnelles et Projets</title>
     <style>
+        /* Reset des styles par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style général */
         body {
             font-family: 'Arial Black', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
-            color: #d4af37;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
+        /* Header */
         .header {
-            background-color: #2d2d2d;
-            color: #d4af37;
+            background-color: #333;
+            color: #fff;
             padding: 15px 0;
             text-align: center;
-            border-bottom: 4px solid #d4af37;
+            border-bottom: 4px solid #fff;
         }
+
         .nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             padding: 10px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
+
         .nav a {
-            flex: 1;
-            color: #d4af37;
+            color: #fff;
             text-decoration: none;
             padding: 15px;
             background-color: #444;
             border-radius: 5px;
-            border: 2px solid #d4af37;
+            border: 2px solid #fff;
             font-weight: bold;
             text-align: center;
-            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1;
+            text-align: center;
+            margin: 5px;
+            box-sizing: border-box;
         }
+
         .nav a:hover {
             background-color: #666;
+            transform: scale(1.05);
         }
-        .dropdown {
-            position: relative;
-            flex: 1;
+
+        /* Boutons des années BUT */
+        .but-buttons {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 10px;
+            flex-wrap: wrap;
         }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #2d2d2d;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
-            width: 100%;
-            z-index: 1;
-            border: 2px solid #d4af37;
-        }
-        .dropdown-content a {
-            color: #d4af37;
-            padding: 10px;
-            display: block;
-            text-decoration: none;
+
+        .but-button {
+            background-color: #444;
+            color: #fff;
+            border-radius: 12px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-weight: bold;
+            font-size: 1.4rem;
+            margin: 20px;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
         }
-        .dropdown:hover .dropdown-content {
-            display: block;
+
+        .but-button:hover {
+            transform: scale(1.1);
+            background-color: #666;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
+
+        /* Ligne de séparation */
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Boutons des expériences professionnelles */
+        .experience-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .experience-button {
+            background-color: #444;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 250px;
+        }
+
+        .experience-button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        /* Modal (Page Volante) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #fff;
+            max-width: 800px;
+            color: #fff;
+            text-align: left;
+            width: 90%;
+        }
+
+        .modal-content h2 {
+            font-size: 2rem;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .close-modal {
+            color: #fff;
+            font-size: 2rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #ff0000;
+        }
+
         /* Footer */
         .footer {
-            background-color: #2d2d2d;
-            color: #d4af37;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 25px 0;
-            border-top: 4px solid #d4af37;
-            position: fixed;
-            bottom: 0;
+            border-top: 4px solid #fff;
+            margin-top: auto;
             width: 100%;
         }
+
         .footer .buttons {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             padding: 10px;
         }
+
         .footer a {
-            flex: 1;
-            color: #d4af37;
+            color: #fff;
             text-decoration: none;
             padding: 15px;
             background-color: #444;
             border-radius: 5px;
-            border: 2px solid #d4af37;
+            border: 2px solid #fff;
             font-weight: bold;
             text-align: center;
             display: block;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1;
+            text-align: center;
+            margin: 5px 0;
         }
+
         .footer a:hover {
             background-color: #666;
+            transform: scale(1.05);
+        }
+
+        /* Media Queries pour rendre la page responsive */
+        @media (max-width: 768px) {
+            .but-buttons {
+                flex-direction: column;
+            }
+
+            .but-button {
+                width: 150px;
+                height: 150px;
+                font-size: 1.2rem;
+            }
+
+            .experience-buttons {
+                flex-direction: column;
+            }
+
+            .experience-button {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .but-button {
+                width: 120px;
+                height: 120px;
+                font-size: 1rem;
+            }
+
+            .experience-button {
+                width: 200px;
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -101,32 +263,118 @@
     <div class="header">
         <div class="nav">
             <a href="acceuil">Accueil</a>
-            <div class="dropdown">
-                <a href="personnel">Personnel</a>
-                <div class="dropdown-content">
-                    <a href="musique">musique</a>
-                    <a href="jeux_video">jeux vidéos</a>
-                    <a href="animanga">anime/manga</a>
-                    <a href="sport">sport</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="professionnel">Professionnel</a>
-                <div class="dropdown-content">
-                    <a href="parcours">études</a>
-                    <a href="exp_pro">expérience professionnel</a>
-                    <a href="skills">compétences</a>
-                </div>
-            </div>
+            <a href="personnel">Personnel</a>
+            <a href="professionnel">Professionnel</a>
+        </div>
+    </div>
+
+    <!-- Boutons des années BUT -->
+    <div class="but-buttons">
+        <div class="but-button">
+            <a href="BUT1_proj.html">BUT 1</a>
+        </div>
+        <div class="but-button">
+            <a href="BUT2_proj.html">BUT 2</a>
+        </div>
+        <div class="but-button">
+            <a href="BUT3_proj.html">BUT 3</a>
+        </div>
+    </div>
+
+    <!-- Ligne de séparation -->
+    <div class="line"></div>
+
+    <!-- Boutons des expériences professionnelles -->
+    <div class="experience-buttons">
+        <button class="experience-button" onclick="openModal('modal-1')">Vendeur Agro - Cellier de la Crau</button>
+        <button class="experience-button" onclick="openModal('modal-2')">Stage AIA CP</button>
+        <button class="experience-button" onclick="openModal('modal-3')">Stage MicroBE</button>
+        <button class="experience-button" onclick="openModal('modal-4')">Président BDE</button>
+    </div>
+
+    <!-- Modales pour les projets BUT -->
+    <div id="modal-but1" class="modal" onclick="closeModal('modal-but1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-but1')">&times;</span>
+            <h2>BUT 1 - Projets réalisés</h2>
+            <ul>
+                <li>Carte Smart Light</li>
+                <li>Vérification Système Électrique Automate</li>
+                <li>Robot Autonome Éviteur d'Obstacle</li>
+                <li>Système Émetteur/Récepteur</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modales pour les expériences professionnelles -->
+    <div id="modal-1" class="modal" onclick="closeModal('modal-1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-1')">&times;</span>
+            <h2>Vendeur Agro-Alimentaire - Cellier de la Crau (2022, 2023, 2024)</h2>
+            <p><strong>Pourquoi ce travail ?</strong><br>Ce travail m’a permis d’acquérir une première expérience dans le domaine de la vente, de la gestion de stocks et du contact direct avec les clients.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>J'ai appris à être plus organisé, à gérer les relations avec les clients et à travailler en équipe sous pression, ce qui m'a renforcé dans mes capacités professionnelles.</p>
+            <p><strong>Qu'ai-je appris ?</strong><br>Le sens du service client, la gestion des produits en stock, et l'importance d'un environnement de travail dynamique.</p>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal" onclick="closeModal('modal-2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-2')">&times;</span>
+            <h2>Stage de 8 semaines - AIA CP (2023)</h2>
+            <p><strong>Pourquoi ce travail ?</strong><br>Un stage crucial dans ma formation, il m'a permis de découvrir le monde de la maintenance aéronautique et de participer à des projets concrets dans l'aviation militaire.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Une expérience significative dans un secteur technique avec des responsabilités importantes, notamment la gestion des systèmes d’entretien des équipements.</p>
+            <p><strong>Qu'ai-je appris ?</strong><br>La maintenance d'équipements aéronautiques, la rigueur du secteur militaire, et l'importance du travail en équipe dans des environnements exigeants.</p>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal" onclick="closeModal('modal-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-3')">&times;</span>
+            <h2>Stage de 14 semaines - MicroBE (2024)</h2>
+            <p><strong>Pourquoi ce travail ?</strong><br>Un stage clé dans le développement de mes compétences en génie électrique et informatique industrielle, où j'ai pu travailler sur des projets d’automatisation et de contrôle.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Une meilleure compréhension des systèmes de contrôle industriels et la possibilité d'appliquer mes connaissances dans un environnement de production réelle.</p>
+            <p><strong>Qu'ai-je appris ?</strong><br>La programmation des automates, le contrôle industriel, et l'intégration des systèmes complexes dans des environnements industriels.</p>
+        </div>
+    </div>
+
+    <div id="modal-4" class="modal" onclick="closeModal('modal-4')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-4')">&times;</span>
+            <h2>Président du BDE GEII GIM (2024-2025)</h2>
+            <p><strong>Pourquoi ce travail ?</strong><br>J'ai pris ce rôle pour développer mes compétences en gestion, en organisation d'événements et en leadership au sein d'une association étudiante.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Une grande expérience en gestion de projets, la gestion d'une équipe, et l’organisation d’événements dans un contexte universitaire.</p>
+            <p><strong>Qu'ai-je appris ?</strong><br>Le travail en équipe, la gestion de projets, et la prise de décisions en leadership pour répondre aux besoins de l’association et des étudiants.</p>
         </div>
     </div>
 
     <!-- Pied de page -->
     <div class="footer">
         <div class="buttons">
-            <a href="contact">Contact</a>
-            <a href="cv">CV</a>
+            <a href="contact.html">Contact</a>
+            <a href="cv.html">CV</a>
         </div>
     </div>
+
+    <script>
+        // Fonction pour ouvrir la modale
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        // Fonction pour fermer la modale
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Ferme la modale si on clique en dehors
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
