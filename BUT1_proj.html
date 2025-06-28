@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,8 +155,33 @@
             color: #ff0000;
         }
 
+        .footer .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .footer-button {
+            padding: 15px 30px;
+            background-color: #444;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
     </style>
 </head>
+
 <body>
     <!-- Bandeau du haut -->
     <div class="header">
@@ -231,133 +257,144 @@
     </div>
 
     <!-- robot -->
-<div id="modal-traces-3" class="modal" onclick="closeModal('modal-traces-3')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-traces-3')">&times;</span>
-        <h2>Traces du projet Robot Autonome Éviteur d'Obstacle</h2>
-        <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
-        <!-- Exemple d'images et rapports -->
-        <div>
-            <img src="https://via.placeholder.com/400" alt="Trace 1" style="width: 100%; height: auto; margin-bottom: 20px;">
-            <img src="https://via.placeholder.com/400" alt="Trace 2" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <div id="modal-traces-3" class="modal" onclick="closeModal('modal-traces-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-traces-3')">&times;</span>
+            <h2>Traces du projet Robot Autonome Éviteur d'Obstacle</h2>
+            <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
+            <!-- Exemple d'images et rapports -->
+            <div>
+                <img src="https://via.placeholder.com/400" alt="Trace 1"
+                    style="width: 100%; height: auto; margin-bottom: 20px;">
+                <img src="https://via.placeholder.com/400" alt="Trace 2"
+                    style="width: 100%; height: auto; margin-bottom: 20px;">
+            </div>
         </div>
     </div>
-</div>
 
-<!-- émetteur récepteur -->
-<div id="modal-traces-4" class="modal" onclick="closeModal('modal-traces-4')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-traces-4')">&times;</span>
-        <h2>Traces du projet Système Émetteur/Récepteur</h2>
-        <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
-        <!-- Exemple d'images et rapports -->
-        <div>
-            <img src="https://via.placeholder.com/400" alt="Trace 1" style="width: 100%; height: auto; margin-bottom: 20px;">
-            <img src="https://via.placeholder.com/400" alt="Trace 2" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <!-- émetteur récepteur -->
+    <div id="modal-traces-4" class="modal" onclick="closeModal('modal-traces-4')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-traces-4')">&times;</span>
+            <h2>Traces du projet Système Émetteur/Récepteur</h2>
+            <p>Ajoute ici les images et rapports relatifs aux traces du projet.</p>
+            <!-- Exemple d'images et rapports -->
+            <div>
+                <img src="https://via.placeholder.com/400" alt="Trace 1"
+                    style="width: 100%; height: auto; margin-bottom: 20px;">
+                <img src="https://via.placeholder.com/400" alt="Trace 2"
+                    style="width: 100%; height: auto; margin-bottom: 20px;">
+            </div>
         </div>
     </div>
-</div>
 
 
 
-<!-- Modal Détails -->
-<div id="modal-detail-1" class="modal" onclick="closeModal('modal-detail-1')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-detail-1')">&times;</span>
-        <h2>Détail du projet Carte Smart Light</h2>
-        <h3>Objectif</h3>
-        <p>Développer une carte électronique intelligente destinée au contrôle de l'éclairage embarqué, avec une gestion optimisée de l'énergie et une interface utilisateur intuitive.</p>
-        
-        <h3>Technologies utilisées</h3>
-        <ul>
-            <li>Conception de PCB à l'aide de Kicad</li>
-            <li>Programmation sur microcontrôleur Arduino</li>
-            <li>Intégration de capteurs de luminosité pour ajuster automatiquement l'éclairage</li>
-        </ul>
-        
-        <h3>Réalisations</h3>
-        <ul>
-            <li>Conception et développement d'une carte fonctionnelle intégrant un système de gestion automatique de l'éclairage</li>
-            <li>Réalisation de tests et validation de la carte en conditions réelles afin de garantir son efficacité</li>
-        </ul>
+    <!-- Modal Détails -->
+    <div id="modal-detail-1" class="modal" onclick="closeModal('modal-detail-1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-1')">&times;</span>
+            <h2>Détail du projet Carte Smart Light</h2>
+            <h3>Objectif</h3>
+            <p>Développer une carte électronique intelligente destinée au contrôle de l'éclairage embarqué, avec une
+                gestion optimisée de l'énergie et une interface utilisateur intuitive.</p>
+
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li>Conception de PCB à l'aide de Kicad</li>
+                <li>Programmation sur microcontrôleur Arduino</li>
+                <li>Intégration de capteurs de luminosité pour ajuster automatiquement l'éclairage</li>
+            </ul>
+
+            <h3>Réalisations</h3>
+            <ul>
+                <li>Conception et développement d'une carte fonctionnelle intégrant un système de gestion automatique de
+                    l'éclairage</li>
+                <li>Réalisation de tests et validation de la carte en conditions réelles afin de garantir son efficacité
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<div id="modal-detail-2" class="modal" onclick="closeModal('modal-detail-2')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-detail-2')">&times;</span>
-        <h2>Détail du projet Vérification Système Électrique Automate</h2>
-        
-        <h3>Objectif</h3>
-        <p>Établir une méthodologie complète de tests et de validation pour un système électrique, garantissant ainsi sa fiabilité et sa conformité aux exigences techniques.</p>
-        
-        <h3>Technologies utilisées</h3>
-        <ul>
-            <li>Oscilloscope numérique et analyseur de spectre pour l'analyse des signaux</li>
-            <li>Multimètres de précision pour la mesure des grandeurs électriques</li>
-            <li>Protocoles de test automatisés pour une vérification systématique</li>
-            <li>Rédaction de documentation technique détaillée et rapports de validation</li>
-        </ul>
-        
-        <h3>Réalisations</h3>
-        <ul>
-            <li>Élaboration de procédures de test standardisées adaptées au système étudié</li>
-            <li>Validation des performances électriques conformément aux spécifications</li>
-            <li>Identification, analyse et correction des anomalies détectées</li>
-            <li>Rédaction complète de la documentation des résultats pour assurer la traçabilité et la conformité</li>
-        </ul>
-    </div>
-</div>
+    <div id="modal-detail-2" class="modal" onclick="closeModal('modal-detail-2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-2')">&times;</span>
+            <h2>Détail du projet Vérification Système Électrique Automate</h2>
 
-<!-- robot -->
-<div id="modal-detail-3" class="modal" onclick="closeModal('modal-detail-3')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-detail-3')">&times;</span>
-        <h2>Détail du projet Robot Autonome Éviteur d'Obstacle</h2>
-        
-        <h3>Objectif</h3>
-        <p>Développer un robot autonome capable de naviguer et d'éviter les obstacles de manière efficace et sécurisée.</p>
-        
-        <h3>Technologies utilisées</h3>
-        <ul>
-            <li>Arduino pour la gestion du robot</li>
-            <li>Capteurs ultrasoniques pour la détection des obstacles</li>
-            <li>Algorithmique pour la prise de décision du robot</li>
-        </ul>
-        
-        <h3>Réalisations</h3>
-        <ul>
-            <li>Conception du système électronique du robot</li>
-            <li>Développement de l'algorithme d'évitement d'obstacles</li>
-            <li>Test du robot en environnement réel pour validation de son fonctionnement</li>
-        </ul>
-    </div>
-</div>
+            <h3>Objectif</h3>
+            <p>Établir une méthodologie complète de tests et de validation pour un système électrique, garantissant
+                ainsi sa fiabilité et sa conformité aux exigences techniques.</p>
 
-<!-- émetteur récepteur -->
-<div id="modal-detail-4" class="modal" onclick="closeModal('modal-detail-4')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-detail-4')">&times;</span>
-        <h2>Détail du projet Système Émetteur/Récepteur</h2>
-        
-        <h3>Objectif</h3>
-        <p>Mettre en place un système de communication à distance, utilisant la technologie émetteur/récepteur pour permettre des échanges de données fiables.</p>
-        
-        <h3>Technologies utilisées</h3>
-        <ul>
-            <li>Modules émetteur/récepteur RF (radio fréquence)</li>
-            <li>Microcontrôleur pour la gestion de la transmission et de la réception des données</li>
-            <li>Protocoles de communication pour garantir la fiabilité des échanges</li>
-        </ul>
-        
-        <h3>Réalisations</h3>
-        <ul>
-            <li>Conception du schéma de connexion des modules</li>
-            <li>Développement du code pour la gestion de l'émission et de la réception des signaux</li>
-            <li>Tests sur le terrain pour valider la portée et la fiabilité du système</li>
-        </ul>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li>Oscilloscope numérique et analyseur de spectre pour l'analyse des signaux</li>
+                <li>Multimètres de précision pour la mesure des grandeurs électriques</li>
+                <li>Protocoles de test automatisés pour une vérification systématique</li>
+                <li>Rédaction de documentation technique détaillée et rapports de validation</li>
+            </ul>
+
+            <h3>Réalisations</h3>
+            <ul>
+                <li>Élaboration de procédures de test standardisées adaptées au système étudié</li>
+                <li>Validation des performances électriques conformément aux spécifications</li>
+                <li>Identification, analyse et correction des anomalies détectées</li>
+                <li>Rédaction complète de la documentation des résultats pour assurer la traçabilité et la conformité
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+
+    <!-- robot -->
+    <div id="modal-detail-3" class="modal" onclick="closeModal('modal-detail-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-3')">&times;</span>
+            <h2>Détail du projet Robot Autonome Éviteur d'Obstacle</h2>
+
+            <h3>Objectif</h3>
+            <p>Développer un robot autonome capable de naviguer et d'éviter les obstacles de manière efficace et
+                sécurisée.</p>
+
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li>Arduino pour la gestion du robot</li>
+                <li>Capteurs ultrasoniques pour la détection des obstacles</li>
+                <li>Algorithmique pour la prise de décision du robot</li>
+            </ul>
+
+            <h3>Réalisations</h3>
+            <ul>
+                <li>Conception du système électronique du robot</li>
+                <li>Développement de l'algorithme d'évitement d'obstacles</li>
+                <li>Test du robot en environnement réel pour validation de son fonctionnement</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- émetteur récepteur -->
+    <div id="modal-detail-4" class="modal" onclick="closeModal('modal-detail-4')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-detail-4')">&times;</span>
+            <h2>Détail du projet Système Émetteur/Récepteur</h2>
+
+            <h3>Objectif</h3>
+            <p>Mettre en place un système de communication à distance, utilisant la technologie émetteur/récepteur pour
+                permettre des échanges de données fiables.</p>
+
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li>Modules émetteur/récepteur RF (radio fréquence)</li>
+                <li>Microcontrôleur pour la gestion de la transmission et de la réception des données</li>
+                <li>Protocoles de communication pour garantir la fiabilité des échanges</li>
+            </ul>
+
+            <h3>Réalisations</h3>
+            <ul>
+                <li>Conception du schéma de connexion des modules</li>
+                <li>Développement du code pour la gestion de l'émission et de la réception des signaux</li>
+                <li>Tests sur le terrain pour valider la portée et la fiabilité du système</li>
+            </ul>
+        </div>
+    </div>
 
 
     <!-- Modal Feedback -->
@@ -378,22 +415,34 @@
     </div>
 
     <!-- robot -->
-<div id="modal-feedback-3" class="modal" onclick="closeModal('modal-feedback-3')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-feedback-3')">&times;</span>
-        <h2>Mon ressenti sur le projet Robot Autonome Éviteur d'Obstacle</h2>
-        <p>Ce projet m'a permis d'améliorer mes compétences en robotique autonome et en programmation. Le plus grand défi a été de réussir à créer un algorithme efficace pour l'évitement des obstacles, mais c'était un véritable apprentissage sur le terrain.</p>
+    <div id="modal-feedback-3" class="modal" onclick="closeModal('modal-feedback-3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-feedback-3')">&times;</span>
+            <h2>Mon ressenti sur le projet Robot Autonome Éviteur d'Obstacle</h2>
+            <p>Ce projet m'a permis d'améliorer mes compétences en robotique autonome et en programmation. Le plus grand
+                défi a été de réussir à créer un algorithme efficace pour l'évitement des obstacles, mais c'était un
+                véritable apprentissage sur le terrain.</p>
+        </div>
     </div>
-</div>
 
-<!-- émetteur récepteur -->
-<div id="modal-feedback-4" class="modal" onclick="closeModal('modal-feedback-4')">
-    <div class="modal-content" onclick="event.stopPropagation();">
-        <span class="close-modal" onclick="closeModal('modal-feedback-4')">&times;</span>
-        <h2>Mon ressenti sur le projet Système Émetteur/Récepteur</h2>
-        <p>Ce projet a été un excellent moyen d'appliquer mes connaissances en communication sans fil. Le défi majeur a été de garantir la stabilité du signal et d'assurer des échanges de données sans erreur. C'était très gratifiant de voir tout le système fonctionner en conditions réelles.</p>
+    <!-- émetteur récepteur -->
+    <div id="modal-feedback-4" class="modal" onclick="closeModal('modal-feedback-4')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-modal" onclick="closeModal('modal-feedback-4')">&times;</span>
+            <h2>Mon ressenti sur le projet Système Émetteur/Récepteur</h2>
+            <p>Ce projet a été un excellent moyen d'appliquer mes connaissances en communication sans fil. Le défi
+                majeur a été de garantir la stabilité du signal et d'assurer des échanges de données sans erreur.
+                C'était très gratifiant de voir tout le système fonctionner en conditions réelles.</p>
+        </div>
     </div>
-</div>
+
+    <!-- Boutons en bas de page -->
+    <div class="footer">
+        <div class="buttons">
+            <a href="BUT2_proj.html" class="footer-button">BUT 2</a>
+            <a href="BUT3_proj.html" class="footer-button">BUT 3</a>
+        </div>
+    </div>
 
 
     <script>
@@ -408,7 +457,7 @@
         }
 
         // Ferme la modale si on clique en dehors
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', function (event) {
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
                 if (event.target === modal) {
@@ -418,4 +467,5 @@
         });
     </script>
 </body>
+
 </html>
