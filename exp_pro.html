@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,6 +157,10 @@
             color: #fff;
             text-align: left;
             width: 90%;
+            overflow-y: auto;
+            /* Active le défilement vertical */
+            max-height: 80vh;
+            /* Définir une hauteur maximale pour la modal */
         }
 
         .modal-content h2 {
@@ -258,6 +263,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Bandeau du haut -->
     <div class="header">
@@ -311,9 +317,22 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-1')">&times;</span>
             <h2>Vendeur Agro-Alimentaire - Cellier de la Crau (2022, 2023, 2024)</h2>
-            <p><strong>Pourquoi ce travail ?</strong><br>Ce poste de vendeur agroalimentaire était pour moi un emploi étudiant, mais aussi une occasion de gagner de l'expérience concrète dans le secteur du commerce de détail. Mon objectif principal était d’acquérir une première expérience professionnelle, mais aussi de répondre aux besoins financiers des études tout en développant des compétences utiles dans ma carrière future.</p>
-            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Cette expérience m’a permis de renforcer plusieurs compétences clés. J'ai pu développer une meilleure sociabilité et apprendre à gérer les relations clients de manière professionnelle. De plus, j'ai acquis une expérience précieuse en gestion de magasin, de l’organisation des stocks à la présentation des produits. Ce rôle m'a aussi permis de comprendre l'importance de la réactivité et de la flexibilité dans un environnement de travail dynamique.</p>
-            <p><strong>Qu'ai-je appris ?</strong><br>J'ai appris à comprendre les attentes des clients et à offrir un service de qualité, en anticipant leurs besoins et en m'assurant qu'ils repartent satisfaits. J'ai également découvert l'importance de l'efficacité opérationnelle en magasin, notamment la gestion des stocks et la présentation des produits. Ce travail m'a donné une perspective sur le travail d’équipe et l’importance de la coopération dans un environnement où chaque détail compte pour garantir une expérience client réussie.</p>
+            <p><strong>Pourquoi ce travail ?</strong><br>Ce poste de vendeur agroalimentaire était pour moi un emploi
+                étudiant, mais aussi une occasion de gagner de l'expérience concrète dans le secteur du commerce de
+                détail. Mon objectif principal était d’acquérir une première expérience professionnelle, mais aussi de
+                répondre aux besoins financiers des études tout en développant des compétences utiles dans ma carrière
+                future.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Cette expérience m’a permis de renforcer plusieurs
+                compétences clés. J'ai pu développer une meilleure sociabilité et apprendre à gérer les relations
+                clients de manière professionnelle. De plus, j'ai acquis une expérience précieuse en gestion de magasin,
+                de l’organisation des stocks à la présentation des produits. Ce rôle m'a aussi permis de comprendre
+                l'importance de la réactivité et de la flexibilité dans un environnement de travail dynamique.</p>
+            <p><strong>Qu'ai-je appris ?</strong><br>J'ai appris à comprendre les attentes des clients et à offrir un
+                service de qualité, en anticipant leurs besoins et en m'assurant qu'ils repartent satisfaits. J'ai
+                également découvert l'importance de l'efficacité opérationnelle en magasin, notamment la gestion des
+                stocks et la présentation des produits. Ce travail m'a donné une perspective sur le travail d’équipe et
+                l’importance de la coopération dans un environnement où chaque détail compte pour garantir une
+                expérience client réussie.</p>
         </div>
     </div>
 
@@ -321,9 +340,31 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-2')">&times;</span>
             <h2>Stage de 8 semaines - AIA CP (2023)</h2>
-            <p><strong>Pourquoi ce travail ?</strong><br>Ce stage s’inscrivait dans le cadre de ma formation en BUT2 GEII (Génie Électrique et Informatique Industrielle). Il m’a permis d'intégrer l'AIA CP (Atelier Industriel Aéronautique de la Côte d'Azur), un acteur majeur dans le secteur de l'aéronautique. L’objectif était d'appliquer les connaissances théoriques acquises durant ma formation sur des projets concrets et de découvrir les différentes applications de l’électronique et de l’informatique dans un environnement aéronautique de haute technologie.</p>
-            <p><strong>Qu'est-ce que j'ai appris ?</strong><br>Ce stage m'a permis de développer des compétences techniques approfondies, notamment en programmation C++. J'ai appris à adapter et à programmer des systèmes complexes, et à comprendre les différents usages de l’électronique dans un domaine aussi pointu que l’aéronautique. J'ai également acquis des compétences sur les normes et les protocoles utilisés dans l’industrie aéronautique, notamment en matière de sécurité, de performance et de fiabilité des systèmes.</p>
-            <p><strong>Ce que j’y ai fait</strong><br>Durant ce stage, j'ai été amené à travailler sur un projet très intéressant et technique : l'adaptation d'un simulateur d'entraînement militaire pour les apprentis pilotes d'avion de chasse en une attraction touristique. Cela a impliqué la modification des logiciels du simulateur et l’intégration d’une interface conviviale pour les visiteurs tout en respectant les standards de sécurité rigoureux. Ce projet m’a permis de me confronter à des défis de programmation et de conception, tout en découvrant les spécificités techniques de l’aviation militaire et de la simulation.</p>
+            <p><strong>Pourquoi ce travail ?</strong><br>Ce stage s’inscrivait dans le cadre de ma formation en BUT2
+                GEII (Génie Électrique et Informatique Industrielle). Il m’a permis d'intégrer l'AIA CP (Atelier
+                Industriel Aéronautique de la Côte d'Azur), un acteur majeur dans le secteur de l'aéronautique.
+                L’objectif était d'appliquer les connaissances théoriques acquises durant ma formation sur des projets
+                concrets et de découvrir les différentes applications de l’électronique et de l’informatique dans un
+                environnement aéronautique de haute technologie.</p>
+            <p><strong>Qu'est-ce que j'ai appris ?</strong><br>Ce stage m'a permis de développer des compétences
+                techniques approfondies, notamment en programmation C++. J'ai appris à adapter et à programmer des
+                systèmes complexes, et à comprendre les différents usages de l’électronique dans un domaine aussi pointu
+                que l’aéronautique. J'ai également acquis des compétences sur les normes et les protocoles utilisés dans
+                l’industrie aéronautique, notamment en matière de sécurité, de performance et de fiabilité des systèmes.
+            </p>
+            <p><strong>Ce que j’y ai fait</strong><br>Durant ce stage, j'ai été amené à travailler sur un projet très
+                intéressant et technique : l'adaptation d'un simulateur d'entraînement militaire pour les apprentis
+                pilotes d'avion de chasse en une attraction touristique. Cela a impliqué la modification des logiciels
+                du simulateur et l’intégration d’une interface conviviale pour les visiteurs tout en respectant les
+                standards de sécurité rigoureux. Ce projet m’a permis de me confronter à des défis de programmation et
+                de conception, tout en découvrant les spécificités techniques de l’aviation militaire et de la
+                simulation.</p>
+                            <!-- Intégration du PDF -->
+            <div style="margin-top: 20px;">
+                <h3>rapport de stage</h3>
+                <embed src="rapport de stage.pdf" width="100%" height="600px"
+                    type="application/pdf">
+            </div>
         </div>
     </div>
 
@@ -331,11 +372,36 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-3')">&times;</span>
             <h2>Stage de 14 semaines - MicroBE (2024)</h2>
-            <p><strong>Pourquoi ce travail ?</strong><br>Dans le cadre de ma troisième année de BUT GEII (Génie Électrique et Informatique Industrielle), j'ai effectué un stage de 14 semaines au sein de MicroBE, une entreprise spécialisée dans l’innovation technologique dans le domaine des systèmes électroniques. Ce stage m’a permis de me confronter à des projets concrets, d’acquérir des compétences pratiques et de mettre en application les connaissances acquises au cours de mes études, tout en me familiarisant avec l’environnement professionnel du secteur industriel.</p>
-            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Ce stage m’a grandement contribué en termes d’autonomie et de prise d’initiative. Travaillant sur des projets de conception et de réalisation de prototypes de systèmes électriques, j’ai pu développer ma capacité à résoudre des problèmes techniques de manière indépendante et à être force de proposition dans les différentes étapes du processus de conception. Cela m’a également permis d’acquérir une expérience précieuse en gestion de projet, en collaboration avec des ingénieurs et des techniciens, tout en respectant des délais stricts et des contraintes techniques.</p>
-            <p><strong>ce que j'y ai fait</strong><br>J'ai été chargé de l’étude et du développement d’une carte électronique pour un compteur d’eau. Cette tâche m’a permis de travailler sur l’intégration de composants électroniques, la programmation du microcontrôleur ainsi que la mise en place d’un système de communication entre les différents modules du projet. J'ai également contribué à l’optimisation du circuit pour en améliorer les performances et la fiabilité. Ce projet m’a non seulement permis de perfectionner mes compétences en conception électronique, mais aussi de comprendre l’importance de la précision et de la rigueur dans la réalisation de dispositifs utilisés dans des applications réelles.
+            <p><strong>Pourquoi ce travail ?</strong><br>Dans le cadre de ma troisième année de BUT GEII (Génie
+                Électrique et Informatique Industrielle), j'ai effectué un stage de 14 semaines au sein de MicroBE, une
+                entreprise spécialisée dans l’innovation technologique dans le domaine des systèmes électroniques. Ce
+                stage m’a permis de me confronter à des projets concrets, d’acquérir des compétences pratiques et de
+                mettre en application les connaissances acquises au cours de mes études, tout en me familiarisant avec
+                l’environnement professionnel du secteur industriel.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Ce stage m’a grandement contribué en termes
+                d’autonomie et de prise d’initiative. Travaillant sur des projets de conception et de réalisation de
+                prototypes de systèmes électriques, j’ai pu développer ma capacité à résoudre des problèmes techniques
+                de manière indépendante et à être force de proposition dans les différentes étapes du processus de
+                conception. Cela m’a également permis d’acquérir une expérience précieuse en gestion de projet, en
+                collaboration avec des ingénieurs et des techniciens, tout en respectant des délais stricts et des
+                contraintes techniques.</p>
+            <p><strong>ce que j'y ai fait</strong><br>J'ai été chargé de l’étude et du développement d’une carte
+                électronique pour un compteur d’eau. Cette tâche m’a permis de travailler sur l’intégration de
+                composants électroniques, la programmation du microcontrôleur ainsi que la mise en place d’un système de
+                communication entre les différents modules du projet. J'ai également contribué à l’optimisation du
+                circuit pour en améliorer les performances et la fiabilité. Ce projet m’a non seulement permis de
+                perfectionner mes compétences en conception électronique, mais aussi de comprendre l’importance de la
+                précision et de la rigueur dans la réalisation de dispositifs utilisés dans des applications réelles.
 
             </p>
+
+            <!-- Intégration du PDF -->
+            <div style="margin-top: 20px;">
+                <h3>rapport de stage</h3>
+                <embed src="rapport_de_stage_Valentin_Mercenaro (1).pdf" width="100%" height="600px"
+                    type="application/pdf">
+            </div>
+
         </div>
     </div>
 
@@ -343,9 +409,25 @@
         <div class="modal-content" onclick="event.stopPropagation();">
             <span class="close-modal" onclick="closeModal('modal-4')">&times;</span>
             <h2>Président du BDE GEII GIM (2024-2025)</h2>
-            <p><strong>Pourquoi ce travail ?</strong><br>J’ai accepté de devenir Président du Bureau des Étudiants (BDE) GEII GIM car je souhaitais dynamiser la vie étudiante au sein de ma filière. En effet, malgré les promesses d'une expérience enrichissante que la vie universitaire nous offre, celle-ci n’était pas suffisamment incarnée à travers des événements et des activités concrètes. Le manque d’un BDE actif était un frein à l’engagement des étudiants, et je voulais changer cela. Mon objectif était de recréer une véritable communauté, d’organiser des événements, et de donner aux étudiants l’occasion de découvrir pleinement la vie étudiante et ses bienfaits.</p>
-            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Cette expérience m’a énormément appris sur la gestion d’équipe, la planification de projets, ainsi que sur l’organisation d’événements. J’ai dû apprendre à coordonner une équipe, à gérer les relations avec les différents acteurs de l’université, à respecter des délais et à gérer des ressources, tout en maintenant une bonne cohésion au sein du BDE. La gestion du temps a été également un aspect crucial de ce rôle, en jonglant avec mes études et mes responsabilités associatives. Cette expérience a renforcé mes compétences en leadership et m’a appris à m’adapter à des situations parfois imprévues.</p>
-            <p><strong>Qu'ai-je fais ?</strong><br>J’ai organisé des soirées et des activités pour dynamiser la vie étudiante. Mon principal objectif était de remettre le BDE sur des bases solides afin de faciliter le travail des futurs responsables. Pour cela, j’ai suivi des formations et mis en place des outils pour assurer une gestion efficace et pérenne du BDE, permettant ainsi d’organiser davantage d’événements à l’avenir.</p>
+            <p><strong>Pourquoi ce travail ?</strong><br>J’ai accepté de devenir Président du Bureau des Étudiants (BDE)
+                GEII GIM car je souhaitais dynamiser la vie étudiante au sein de ma filière. En effet, malgré les
+                promesses d'une expérience enrichissante que la vie universitaire nous offre, celle-ci n’était pas
+                suffisamment incarnée à travers des événements et des activités concrètes. Le manque d’un BDE actif
+                était un frein à l’engagement des étudiants, et je voulais changer cela. Mon objectif était de recréer
+                une véritable communauté, d’organiser des événements, et de donner aux étudiants l’occasion de découvrir
+                pleinement la vie étudiante et ses bienfaits.</p>
+            <p><strong>Qu'est-ce que ça m'a apporté ?</strong><br>Cette expérience m’a énormément appris sur la gestion
+                d’équipe, la planification de projets, ainsi que sur l’organisation d’événements. J’ai dû apprendre à
+                coordonner une équipe, à gérer les relations avec les différents acteurs de l’université, à respecter
+                des délais et à gérer des ressources, tout en maintenant une bonne cohésion au sein du BDE. La gestion
+                du temps a été également un aspect crucial de ce rôle, en jonglant avec mes études et mes
+                responsabilités associatives. Cette expérience a renforcé mes compétences en leadership et m’a appris à
+                m’adapter à des situations parfois imprévues.</p>
+            <p><strong>Qu'ai-je fais ?</strong><br>J’ai organisé des soirées et des activités pour dynamiser la vie
+                étudiante. Mon principal objectif était de remettre le BDE sur des bases solides afin de faciliter le
+                travail des futurs responsables. Pour cela, j’ai suivi des formations et mis en place des outils pour
+                assurer une gestion efficace et pérenne du BDE, permettant ainsi d’organiser davantage d’événements à
+                l’avenir.</p>
         </div>
     </div>
 
@@ -369,7 +451,7 @@
         }
 
         // Ferme la modale si on clique en dehors
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', function (event) {
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
                 if (event.target === modal) {
@@ -379,4 +461,5 @@
         });
     </script>
 </body>
+
 </html>
